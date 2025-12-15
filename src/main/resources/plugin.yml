@@ -1,0 +1,9 @@
+name: SimpleCosmetics
+version: '2.2'
+main: me.refrac.cosmetics.Cosmetics
+api-version: '1.20'
+
+commands:
+  cosmetics:
+    aliases: [trails, playertrails]
+  cosmeticsreload:

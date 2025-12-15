@@ -1,0 +1,134 @@
+#File: readme.txt
+#This is for people who want to use RGB colors in their config.
+
+TrailsMenu:
+  TITLE: "&#1e1e1e&lParticle Trails Menu"
+
+  FLAME:
+    ENABLED: true
+    NAME: "&#ffd37a🔥 Flame Trail"
+    LORE:
+      - "&8Leave a trail of fire."
+      - ""
+      - "&#ffaa00Effect"
+      - "&#ffffffBlazing &#ffbb33particles &#fffffffollow you."
+      - ""
+      - "&#ffaa00➤ Click to apply"
+    MATERIAL: "BLAZE_POWDER"
+    SLOT: 21
+
+  HEART:
+    ENABLED: true
+    NAME: "&#ff66cc❤ Heart Trail"
+    LORE:
+      - "&8Show love as you walk."
+      - ""
+      - "&#ff66ccEffect"
+      - "&#ffffffAdorable &#ff99cchearts &#fffffffloat behind."
+      - ""
+      - "&#ff66cc➤ Click to apply"
+    MATERIAL: "REDSTONE"
+    SLOT: 10
+
+  SLIME:
+    ENABLED: true
+    NAME: "&#66ff66🟢 Slime Trail"
+    LORE:
+      - "&8Bounce into green goo."
+      - ""
+      - "&#66ff66Effect"
+      - "&#ffffffSticky &#99ff99trails &#fffffffollow your path."
+      - ""
+      - "&#66ff66➤ Click to apply"
+    MATERIAL: "SLIME_BALL"
+    SLOT: 11
+
+  SMOKE:
+    ENABLED: true
+    NAME: "&#bfbfbf💨 Smoke Trail"
+    LORE:
+      - "&8Trail a puff of smoke."
+      - ""
+      - "&#bfbfbfEffect"
+      - "&#ffffffDark &#d9d9d9clouds &#ffffffhover behind you."
+      - ""
+      - "&#bfbfbf➤ Click to apply"
+    MATERIAL: "STRING"
+    SLOT: 12
+
+  CRITICAL:
+    ENABLED: true
+    NAME: "&#ff4d4d✴ Critical Trail"
+    LORE:
+      - "&8Combat-style visual trail."
+      - ""
+      - "&#ff4d4dEffect"
+      - "&#ffffffSharp &#ff6666impact particles &#fffffftrail you."
+      - ""
+      - "&#ff4d4d➤ Click to apply"
+    MATERIAL: "FLINT"
+    SLOT: 13
+
+  NOTES:
+    ENABLED: false
+    NAME: "&#cc99ff🎵 Notes Trail"
+    LORE:
+      - "&8Walk with a musical flair."
+      - ""
+      - "&#cc99ffEffect"
+      - "&#ffffffColorful &#d9b3ffnotes &#ffffffdance around you."
+      - ""
+      - "&#cc99ff➤ Click to apply"
+    MATERIAL: "NOTE_BLOCK"
+    SLOT: 14
+
+  LAVA:
+    ENABLED: true
+    NAME: "&#ff4d4d🌋 Lava Trail"
+    LORE:
+      - "&8Drip molten sparks behind."
+      - ""
+      - "&#ff4d4dEffect"
+      - "&#ffffffHot &#ff6666lava &#ffffffparticles bubble out."
+      - ""
+      - "&#ff4d4d➤ Click to apply"
+    MATERIAL: "LAVA_BUCKET"
+    SLOT: 22
+
+  WATER:
+    ENABLED: true
+    NAME: "&#66ccff💧 Water Trail"
+    LORE:
+      - "&8Leave a trail of splash."
+      - ""
+      - "&#66ccffEffect"
+      - "&#ffffffBlue &#99ddffdrips &#fffffffollow your steps."
+      - ""
+      - "&#66ccff➤ Click to apply"
+    MATERIAL: "WATER_BUCKET"
+    SLOT: 19
+
+  CLOUD:
+    ENABLED: true
+    NAME: "&#eeeeee☁ Cloud Trail"
+    LORE:
+      - "&8Float with a misty trail."
+      - ""
+      - "&#eeeeeeEffect"
+      - "&#ffffffSoft &#cccccccloud particles &#ffffffsurround you."
+      - ""
+      - "&#eeeeee➤ Click to apply"
+    MATERIAL: "BEACON"
+    SLOT: 20
+
+  REMOVE-TRAIL:
+    NAME: "&#ff4d4d✖ Remove Trail"
+    LORE:
+      - "&8Stop your current trail effect."
+      - ""
+      - "&#ff6666Clear Effect"
+      - "&#ffffffRemove all active particle trails."
+      - ""
+      - "&#ff4d4d➤ Click to remove"
+    MATERIAL: "BARRIER"
+    SLOT: 15
