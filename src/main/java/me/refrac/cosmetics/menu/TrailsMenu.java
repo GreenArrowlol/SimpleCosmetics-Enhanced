@@ -28,7 +28,10 @@ public class TrailsMenu implements Listener {
     }
 
     public static int getSize() {
-        return 36;
+        int rows = Cosmetics.getInstance().getConfig().getInt("TrailsMenu.ROWS", 4);
+        if (rows < 1) rows = 1;
+        if (rows > 6) rows = 6;
+        return rows * 9;
     }
 
     public static void openMenu(Player p) {
@@ -64,7 +67,8 @@ public class TrailsMenu implements Listener {
 
         inv.setItem(Cosmetics.getInstance().getConfig().getInt("TrailsMenu.REMOVE-TRAIL.SLOT"), Trails.removeTrailsItem());
 
-        for (int i = 0; i < 36; ++i) {
+        int size = getSize();
+        for (int i = 0; i < size; ++i) {
             if (inv.getItem(i) == null) {
                 inv.setItem(i, Glass());
             }

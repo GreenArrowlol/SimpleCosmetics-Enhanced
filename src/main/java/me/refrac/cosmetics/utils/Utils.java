@@ -26,7 +26,7 @@ public class Utils {
 
     public static String getDeveloper = "GreenArrow99 (OG: Refrac)";
     public static String getName = "SimpleCosmetics Enhanced";
-    public static String getVersion = "2.3";
+    public static String getVersion = "2.4";
     public static String getPluginURL = "https://www.spigotmc.org/resources/127149/";
     public static String getDevMessage = ColorUtil.translate("&cThis command can only be used by Refrac for support reasons.");
     public static String getDevMessage2 = ColorUtil.translate("&7If you are worried about what this command does check it out on GitHub here:");

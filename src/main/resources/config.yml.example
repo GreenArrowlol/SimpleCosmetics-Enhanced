@@ -3,6 +3,7 @@
 
 TrailsMenu:
   TITLE: "&#1e1e1e&lParticle Trails Menu"
+  ROWS: 3
 
   FLAME:
     ENABLED: true

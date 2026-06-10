@@ -1,12 +1,28 @@
-configVersion: 1.2
+# =====================================================================
+# SimpleCosmetics Enhanced - configuration
+# Auto-updated by boosted-yaml. New keys added by updates land here
+# automatically; do not remove the configVersion line below.
+# =====================================================================
+
+# Internal config schema version. Used by the auto-updater to merge in
+# new defaults without wiping your changes. Do not edit by hand.
+configVersion: 1.3
 
 Update:
+  # If true, the plugin checks SpigotMC on startup and prints a notice
+  # in the console when a newer version is available.
   Enabled: true
 
+# Extra console-command names that should run /cosmetics.
+# Applied dynamically on startup, so editing this list and running
+# /cosmeticsreload (or restarting) is enough - no plugin.yml edits needed.
 CommandAliases:
   - trails
   - playertrails
 
+# All chat messages the plugin sends. Color codes (&a, &b, ...) and hex
+# (&#RRGGBB) are supported. Placeholders: {trail} is replaced by the
+# trail name (flame, heart, ...).
 Messages:
   APPLY-TRAIL: "&aApplied the {trail} trail."
   REMOVE-TRAIL: "&cRemoved the {trail} trail."
@@ -16,7 +32,19 @@ Messages:
   NO-PERMISSION: "&cYou don't have permission to use this cosmetic."
 
 TrailsMenu:
+  # Inventory title shown at the top of the trails GUI.
   TITLE: "&c&lTrails Menu"
+  # Number of rows in the GUI. Each row holds 9 slots, so total slots = ROWS * 9.
+  # Allowed: 1-6. Make sure every SLOT below fits inside (ROWS * 9 - 1).
+  # The shipped layout puts REMOVE-TRAIL at slot 31, so the default is 4 rows.
+  ROWS: 4
+
+  # Each trail entry below shares the same shape:
+  #   ENABLED  - if false, the trail is hidden from the GUI and cannot be selected
+  #   NAME     - item display name in the GUI (color codes / hex supported)
+  #   LORE     - list of lore lines under the item name
+  #   MATERIAL - Bukkit Material name (e.g. BLAZE_POWDER, REDSTONE)
+  #   SLOT     - inventory slot index (0 = top-left, increases left-to-right then down)
   FLAME:
     ENABLED: true
     NAME: "&6Flame Trail"
@@ -81,6 +109,7 @@ TrailsMenu:
       - "&7Click to apply the Cloud Trail."
     MATERIAL: "BEACON"
     SLOT: 8
+  # The "clear my trail" button. No ENABLED key - it is always present.
   REMOVE-TRAIL:
     NAME: "&cRemove Trail"
     LORE:
