@@ -7,7 +7,6 @@ import dev.dejvokep.boostedyaml.settings.general.GeneralSettings;
 import dev.dejvokep.boostedyaml.settings.loader.LoaderSettings;
 import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings;
 import me.refrac.cosmetics.commands.CosmeticsCommand;
-import me.refrac.cosmetics.commands.CosmeticsReloadCommand;
 import me.refrac.cosmetics.listeners.JoinListener;
 import me.refrac.cosmetics.listeners.ParticleListener;
 import me.refrac.cosmetics.listeners.Particlev1_13PlusListener;
@@ -38,11 +37,13 @@ public final class Cosmetics extends JavaPlugin {
         extractStaticResource("config.yml.example");
         extractStaticResource("readme.txt");
 
-        new Metrics(this, 31908);
+        if (getConfig().getBoolean("BStats.Enabled", true)) {
+            new Metrics(this, 31908);
+        }
 
         PluginCommand cosmeticsCmd = getCommand("cosmetics");
         cosmeticsCmd.setExecutor(new CosmeticsCommand());
-        getCommand("cosmeticsreload").setExecutor(new CosmeticsReloadCommand());
+        cosmeticsCmd.setTabCompleter(new CosmeticsCommand());
         applyCommandAliases(cosmeticsCmd);
 
         if (isLegacyVersion()) {
@@ -52,31 +53,60 @@ public final class Cosmetics extends JavaPlugin {
         }
         Bukkit.getPluginManager().registerEvents(new TrailsMenu(), this);
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
-        Logger.NONE.out(ColorUtil.translate("&8&m==&c&m=====&f&m======================&c&m=====&8&m=="));
-        Logger.NONE.out(ColorUtil.translate("&e" + Utils.getName + " has been enabled."));
-        Logger.NONE.out(ColorUtil.translate(" &f[*] &6Version&f: &b" + Utils.getVersion));
-        Logger.NONE.out(ColorUtil.translate(" &f[*] &6Name&f: &b" + Utils.getName));
-        Logger.NONE.out(ColorUtil.translate(" &f[*] &6Author&f: &b" + Utils.getDeveloper));
-        Logger.NONE.out(ColorUtil.translate("&8&m==&c&m=====&f&m======================&c&m=====&8&m=="));
-        Logger.INFO.out("Checking for updates...");
-        new UpdateChecker(Cosmetics.instance, 127149).getLatestVersion(version -> {
-            Bukkit.getScheduler().runTask(this, () -> {
-                if (!Cosmetics.instance.getDescription().getVersion().equalsIgnoreCase(version)) {
-                    Logger.NONE.out(ColorUtil.translate("&7&m-----------------------------------------"));
-                    Logger.NONE.out(ColorUtil.translate("&bA new version of SimpleCosmetics&7(SimpleCosmetics " + version + ") &bhas been released!"));
-                    Logger.NONE.out(ColorUtil.translate("&bPlease update here: " + Utils.getPluginURL));
-                    Logger.NONE.out(ColorUtil.translate("&7&m-----------------------------------------"));
-                } else {
-                    Logger.SUCCESS.out("SimpleCosmetics is up to date!");
-                }
-            });
-        });
 
+        printStartupBanner();
+
+        if (getConfig().getBoolean("Update.Enabled", true)) {
+            Logger.INFO.out("Checking for updates...");
+            new UpdateChecker(this, 127149).getLatestVersion(version -> {
+                Bukkit.getScheduler().runTask(this, () -> {
+                    if (!getDescription().getVersion().equalsIgnoreCase(version)) {
+                        Logger.NONE.out(ColorUtil.translate("&7&m-----------------------------------------"));
+                        Logger.NONE.out(ColorUtil.translate("&bA new version of SimpleCosmetics Enhanced &7(v" + version + ") &bhas been released!"));
+                        Logger.NONE.out(ColorUtil.translate("&bDownload: " + Utils.getPluginURL));
+                        Logger.NONE.out(ColorUtil.translate("&7&m-----------------------------------------"));
+                    } else {
+                        Logger.SUCCESS.out("SimpleCosmetics Enhanced is up to date!");
+                    }
+                });
+            });
+        }
     }
 
     @Override
     public void onDisable() {
+        printShutdownBanner();
         instance = null;
+    }
+
+    private void printStartupBanner() {
+        String version = getDescription().getVersion();
+        String[] lines = {
+                "&8&m=================================================",
+                "&b   ███████╗ ██████╗  &fSimpleCosmetics Enhanced",
+                "&b   ██╔════╝██╔════╝  &7Version: &fv" + version,
+                "&b   ███████╗██║       &7Author:  &fzArrowTan",
+                "&b   ╚════██║██║       &7Fork of: &fSimpleCosmetics &7by &fRefrac",
+                "&b   ███████║╚██████╗  &7Status:  &aEnabled",
+                "&b   ╚══════╝ ╚═════╝",
+                "&8&m================================================="
+        };
+        for (String l : lines) Logger.NONE.out(ColorUtil.translate(l));
+    }
+
+    private void printShutdownBanner() {
+        String version = getDescription().getVersion();
+        String[] lines = {
+                "&8&m=================================================",
+                "&c   ███████╗ ██████╗  &fSimpleCosmetics Enhanced",
+                "&c   ██╔════╝██╔════╝  &7v" + version + " &7- shutting down",
+                "&c   ███████╗██║       &7Thanks for using!",
+                "&c   ╚════██║██║       &7- &fzArrowTan",
+                "&c   ███████║╚██████╗",
+                "&c   ╚══════╝ ╚═════╝",
+                "&8&m================================================="
+        };
+        for (String l : lines) Logger.NONE.out(ColorUtil.translate(l));
     }
 
     private void setupConfig() {

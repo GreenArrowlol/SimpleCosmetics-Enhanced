@@ -6,11 +6,17 @@
 
 # Internal config schema version. Used by the auto-updater to merge in
 # new defaults without wiping your changes. Do not edit by hand.
-configVersion: 1.3
+configVersion: 1.4
 
 Update:
   # If true, the plugin checks SpigotMC on startup and prints a notice
   # in the console when a newer version is available.
+  Enabled: true
+
+BStats:
+  # If true, sends anonymous usage stats to bStats (plugin id 31908).
+  # bStats helps the developer see install counts and rough server stats.
+  # Set to false to opt out completely.
   Enabled: true
 
 # Extra console-command names that should run /cosmetics.

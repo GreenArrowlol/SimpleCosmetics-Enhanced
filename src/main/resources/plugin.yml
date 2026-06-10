@@ -9,7 +9,8 @@ libraries:
 
 commands:
   cosmetics:
-  cosmeticsreload:
+    description: Open the trails menu or run a subcommand (menu, clear, reload, update, version, help).
+    usage: /<command> [menu|clear|reload|update|version|help]
 
 permissions:
   simplecosmetics.use:
