@@ -10,3 +10,8 @@ libraries:
 commands:
   cosmetics:
   cosmeticsreload:
+
+permissions:
+  simplecosmetics.use:
+    description: Open the trails cosmetics menu.
+    default: true
