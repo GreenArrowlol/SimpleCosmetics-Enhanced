@@ -1,0 +1,10 @@
+.claude/
+.idea/
+*.iml
+target/
+build/
+out/
+*.class
+*.log
+.DS_Store
+Thumbs.db

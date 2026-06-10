@@ -1,0 +1,89 @@
+configVersion: 1.2
+
+Update:
+  Enabled: true
+
+CommandAliases:
+  - trails
+  - playertrails
+
+Messages:
+  APPLY-TRAIL: "&aApplied the {trail} trail."
+  REMOVE-TRAIL: "&cRemoved the {trail} trail."
+  REMOVE-ALL-TRAILS: "&cRemoved your trail."
+  NO-ACTIVE-TRAIL: "&cYou don't have an active trail."
+  RELOAD: "&aConfig files reloaded. Changes should be live in-game!"
+  NO-PERMISSION: "&cYou don't have permission to use this cosmetic."
+
+TrailsMenu:
+  TITLE: "&c&lTrails Menu"
+  FLAME:
+    ENABLED: true
+    NAME: "&6Flame Trail"
+    LORE:
+      - "&7Click to apply the Flame Trail."
+      - "&7This is a cool flame effect!"
+    MATERIAL: "BLAZE_POWDER"
+    SLOT: 0
+  HEART:
+    ENABLED: true
+    NAME: "&6Heart Trail"
+    LORE:
+      - "&7Click to apply the Heart Trail."
+    MATERIAL: "REDSTONE"
+    SLOT: 1
+  SLIME:
+    ENABLED: true
+    NAME: "&6Slime Trail"
+    LORE:
+      - "&7Click to apply the Slime Trail."
+    MATERIAL: "SLIME_BALL"
+    SLOT: 2
+  SMOKE:
+    ENABLED: true
+    NAME: "&6Smoke Trail"
+    LORE:
+      - "&7Click to apply the Smoke Trail."
+    MATERIAL: "STRING"
+    SLOT: 3
+  CRITICAL:
+    ENABLED: true
+    NAME: "&6Critical Trail"
+    LORE:
+      - "&7Click to apply the Critical Trail."
+    MATERIAL: "FLINT"
+    SLOT: 4
+  NOTES:
+    ENABLED: true
+    NAME: "&6Notes Trail"
+    LORE:
+      - "&7Click to apply the Notes Trail."
+    MATERIAL: "NOTE_BLOCK"
+    SLOT: 5
+  LAVA:
+    ENABLED: true
+    NAME: "&6Lava Trail"
+    LORE:
+      - "&7Click to apply the Lava Trail."
+    MATERIAL: "LAVA_BUCKET"
+    SLOT: 6
+  WATER:
+    ENABLED: true
+    NAME: "&6Water Trail"
+    LORE:
+      - "&7Click to apply the Water Trail."
+    MATERIAL: "WATER_BUCKET"
+    SLOT: 7
+  CLOUD:
+    ENABLED: true
+    NAME: "&6Cloud Trail"
+    LORE:
+      - "&7Click to apply the Cloud Trail."
+    MATERIAL: "BEACON"
+    SLOT: 8
+  REMOVE-TRAIL:
+    NAME: "&cRemove Trail"
+    LORE:
+      - "&7Remove your trail."
+    MATERIAL: "BARRIER"
+    SLOT: 31
