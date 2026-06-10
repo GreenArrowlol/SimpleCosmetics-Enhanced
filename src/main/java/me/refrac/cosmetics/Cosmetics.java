@@ -10,6 +10,7 @@ import me.refrac.cosmetics.utils.ColorUtil;
 import me.refrac.cosmetics.utils.Logger;
 import me.refrac.cosmetics.utils.UpdateChecker;
 import me.refrac.cosmetics.utils.Utils;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,6 +26,8 @@ public final class Cosmetics extends JavaPlugin {
         if (!new java.io.File(getDataFolder(), "config.yml.example").exists()) {
             saveResource("config.yml.example", false);
         }
+
+        new Metrics(this, 31908);
 
         getCommand("cosmetics").setExecutor(new CosmeticsCommand());
         getCommand("cosmeticsreload").setExecutor(new CosmeticsReloadCommand());
