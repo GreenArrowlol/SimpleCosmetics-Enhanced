@@ -1,5 +1,5 @@
 name: SimpleCosmetics
-version: '2.4'
+version: '2.5'
 main: me.refrac.cosmetics.Cosmetics
 api-version: '1.18'
 authors: [GreenArrowlol, Refrac]

@@ -6,7 +6,7 @@ package me.refrac.cosmetics.listeners;
 
 import me.refrac.cosmetics.utils.Utils;
 import org.bukkit.Material;
-import org.bukkit.Particle;
+import me.refrac.cosmetics.utils.Particles;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -28,31 +28,31 @@ public class Particlev1_13PlusListener implements Listener {
         }
 
         if (Utils.flame.contains(player.getName())) {
-            player.spawnParticle(Particle.FLAME, player.getLocation(), 0);
+            player.spawnParticle(Particles.FLAME, player.getLocation(), 0);
         }
         if (Utils.heart.contains(player.getName())) {
-            player.spawnParticle(Particle.HEART, player.getLocation(), 0);
+            player.spawnParticle(Particles.HEART, player.getLocation(), 0);
         }
         if (Utils.slime.contains(player.getName())) {
-            player.spawnParticle(Particle.ITEM_CRACK, player.getLocation().add(0, 0.4, 0), 5, 0.2, 0.2, 0.2, new ItemStack(Material.SLIME_BALL));
+            player.spawnParticle(Particles.ITEM_CRACK, player.getLocation().add(0, 0.4, 0), 5, 0.2, 0.2, 0.2, new ItemStack(Material.SLIME_BALL));
         }
         if (Utils.smoke.contains(player.getName())) {
-            player.spawnParticle(Particle.SMOKE_NORMAL, player.getLocation(), 0);
+            player.spawnParticle(Particles.SMOKE_NORMAL, player.getLocation(), 0);
         }
         if (Utils.critical.contains(player.getName())) {
-            player.spawnParticle(Particle.CRIT, player.getLocation().add(0, 0.4, 0), 5);
+            player.spawnParticle(Particles.CRIT, player.getLocation().add(0, 0.4, 0), 5);
         }
         if (Utils.notes.contains(player.getName())) {
-            player.spawnParticle(Particle.NOTE, player.getLocation().add(0, 0.4, 0), 3);
+            player.spawnParticle(Particles.NOTE, player.getLocation().add(0, 0.4, 0), 3);
         }
         if (Utils.lava.contains(player.getName())) {
-            player.spawnParticle(Particle.DRIP_LAVA, player.getLocation(), 5);
+            player.spawnParticle(Particles.DRIP_LAVA, player.getLocation(), 5);
         }
         if (Utils.water.contains(player.getName())) {
-            player.spawnParticle(Particle.DRIP_WATER, player.getLocation(), 5);
+            player.spawnParticle(Particles.DRIP_WATER, player.getLocation(), 5);
         }
         if (Utils.cloud.contains(player.getName())) {
-            player.spawnParticle(Particle.CLOUD, player.getLocation().add(0, 0.4, 0), 5, 0.2, 0.2, 0.2, 0);
+            player.spawnParticle(Particles.CLOUD, player.getLocation().add(0, 0.4, 0), 5, 0.2, 0.2, 0.2, 0);
         }
     }
 
